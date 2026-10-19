@@ -1,0 +1,9 @@
+{
+  "tool": "jup_perps_get_quote",
+  "arguments": {
+    "market": "SOL-PERP",
+    "side": "long",
+    "collateralUsd": 50,
+    "leverage": 3
+  }
+}

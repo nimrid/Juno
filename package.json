@@ -1,0 +1,60 @@
+{
+  "name": "paybox-jupiter-perps",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Jupiter Perps Copilot plugin for PayBox: non-custodial leveraged trading and risk management for AI agents on Solana",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "paybox-jup-perps": "dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx src/plugin.ts",
+    "build": "esbuild src/plugin.ts --bundle --platform=node --format=esm --target=node24 --minify \"--banner:js=import { createRequire } from 'module'; import { fileURLToPath } from 'url'; import { dirname } from 'path'; const require = createRequire(import.meta.url); const __filename = fileURLToPath(import.meta.url); const __dirname = dirname(__filename);\" --outfile=dist/plugin.mjs",
+    "conformance": "node scripts/conformance.mjs",
+    "test": "node scripts/test.mjs",
+    "test:live": "node scripts/test-all-live-tools.mjs",
+    "typecheck": "tsc --noEmit",
+    "start": "tsx src/server.ts",
+    "start:stdio": "tsx src/server.ts --stdio",
+    "verify": "tsx src/cli.ts verify",
+    "demo": "tsx src/cli.ts verify",
+    "simulate": "tsx src/cli.ts verify"
+  },
+  "keywords": [
+    "paybox",
+    "jupiter",
+    "perpetuals",
+    "solana",
+    "mcp",
+    "ai-agent",
+    "defi",
+    "moonpay"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "@paybox-sh/sdk": "^2.2.0",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.8",
+    "@types/bn.js": "^5.2.0",
+    "ajv": "^8.20.0",
+    "bn.js": "^5.2.5",
+    "bs58": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.7",
+    "esbuild": "^0.28.2",
+    "express": "^5.3.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
